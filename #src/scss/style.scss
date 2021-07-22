@@ -4,5 +4,31 @@
 body {
   overflow-x: hidden;
 }
+.container {
+  width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+.container-big {
+  width: 100%;
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 75px;
+  padding-right: 75px;
+  box-sizing: border-box;
+  @include xl {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 @import "header";
+
+.homepage .header {
+  background-image: url(../img/content-img/background_home.jpg);
+  background-size: cover;
+  &::after {
+    //height: 930px;
+  }
+}

@@ -68,18 +68,20 @@
   border: 2px solid #81C6D6;
   box-sizing: border-box;
   border-radius: 3px;
+  outline: none;
 }
 @mixin fieldNoBorder {
   @include placeholder(#000000, 20px, "Montserrat");
-  @include thisFont("Montserrat", 700, normal, 28px #000000, 28px);
+  @include thisFont("Montserrat", 700, normal, 28px, #000000, 28px);
   border: none;
   box-sizing: border-box;
   border-radius: 3px;
+  outline: none;
 }
 @mixin fieldFocus {
   border: 4px solid #81C6D6;
 }
-@mixin blueButtonActive {
+@mixin blueButtonNoActive {
   @include thisFont("Montserrat", 500, normal, 28px, #000000, 20px);
   background-color: #81C6D6;
   border-radius: 3px;
@@ -88,8 +90,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
-@mixin blueButtonNoActive {
+@mixin blueButtonActive {
   @include thisFont("Montserrat", 500, normal, 28px, #81C6D6, 20px);
   border: 3px solid #81C6D6;
   box-sizing: border-box;
@@ -98,8 +101,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
-@mixin whiteButtonActive {
+@mixin whiteButtonNoActive {
   @include thisFont("Montserrat", 500, normal, 28px, #000000, 20px);
   background-color: #ffffff;
   border-radius: 3px;
@@ -108,8 +112,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
-@mixin whiteButtonNoActive {
+@mixin whiteButtonActive {
   @include thisFont("Montserrat", 500, normal, 28px, #ffffff, 20px);
   border: 3px solid #ffffff;  
   box-sizing: border-box;
@@ -118,6 +123,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  text-decoration: none;
 }
 
 // mixins популярных брекпоинтов
