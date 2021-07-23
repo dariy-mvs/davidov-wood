@@ -47,24 +47,9 @@
   }
 }
 
-.header1 {
-  @include thisFont("Montserrat", 800, normal, 78px, #000000, 65px);
-}
-.header2 {
-  @include thisFont("Montserrat", 800, normal, 50px, #000000, 42px);
-}
-.header3 {
-  @include thisFont("Montserrat", 700, normal, 37px, #000000, 27px);
-}
-.header4 {
-  @include thisFont("Montserrat", 500, normal, 37px, #000000, 27px);
-}
-.paragraph {
-  @include thisFont("Montserrat", 400, normal, 28px, #000000, 20px);
-}
 @mixin fieldBorder {
   @include placeholder(#000000, 20px, "Montserrat");
-  @include thisFont("Montserrat", 700, normal, 28px #000000, 28px);
+  @include thisFont("Montserrat", 700, normal, 28px #000000, 20px);
   border: 2px solid #81C6D6;
   box-sizing: border-box;
   border-radius: 3px;
@@ -72,7 +57,7 @@
 }
 @mixin fieldNoBorder {
   @include placeholder(#000000, 20px, "Montserrat");
-  @include thisFont("Montserrat", 700, normal, 28px, #000000, 28px);
+  @include thisFont("Montserrat", 700, normal, 28px, #000000, 20px);
   border: none;
   box-sizing: border-box;
   border-radius: 3px;
@@ -160,7 +145,7 @@
 // }
 
 $fields: 20px;
-$max_width: 1200px;
+$max_width: 1240px;
 $columns: 12;
 $offset: 30px;
 $offset_xl: $offset;
@@ -178,11 +163,8 @@ $offset_xs: $offset;
   
   max-width: $max_width;
   margin: 0 auto;
-  //box-sizing: border-box;
+  box-sizing: border-box;
   @include container-full();
-  @include xl {
-    box-sizing: border-box;
-  }
   @include lg {
     width: 770px;
   }

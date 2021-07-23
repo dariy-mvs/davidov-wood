@@ -5,10 +5,47 @@ body {
   overflow-x: hidden;
 }
 .container {
-  width: 1240px;
-  padding: 0 20px;
-  margin: 0 auto;
-  box-sizing: border-box;
+  @include container();
+}
+
+.header1 {
+  @include thisFont("Montserrat", 800, normal, 78px, #000000, 65px);
+  @include md {
+    font-size: 50px;
+  }
+  @include sm {
+    font-size: 40px;
+  }
+}
+.header2 {
+  @include thisFont("Montserrat", 800, normal, 50px, #000000, 42px);
+  @include md {
+    font-size: 32px;
+  }
+  @include sm {
+    font-size: 30px;
+  }
+}
+.header3 {
+  @include thisFont("Montserrat", 700, normal, 37px, #000000, 27px);
+  @include md {
+    font-size: 25px;
+  }
+  @include sm {
+    font-size: 23px;
+  }
+}
+.header4 {
+  @include thisFont("Montserrat", 500, normal, 37px, #000000, 27px);
+  @include md {
+    font-size: 25px;
+  }
+  @include sm {
+    font-size: 23px;
+  }
+}
+.paragraph {
+  @include thisFont("Montserrat", 400, normal, 28px, #000000, 20px);
 }
 .container-big {
   width: 100%;
@@ -28,7 +65,6 @@ body {
 .homepage .header {
   background-image: url(../img/content-img/background_home.jpg);
   background-size: cover;
-  &::after {
-    //height: 930px;
-  }
 }
+
+@import "homepage_main";
