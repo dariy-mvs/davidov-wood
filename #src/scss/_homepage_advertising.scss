@@ -1,0 +1,109 @@
+@import "mySmartGrid";
+
+.advertising {
+
+  // .advertising__list
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 130px;
+  @include lg {
+    margin-top: 130px;
+  }
+  @include md {
+    margin-top: 90px;
+  }
+  @include sm {
+    margin-top: 50px;
+  }
+  }
+
+  // .advertising__item
+
+  &__item {
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    @include md {
+      width: 100%;
+    }
+    &:nth-child(4n + 1) {
+      background-color: #3C3F49;
+      padding: 110px 80px;         
+      .advertising__item_title:after {
+        background-color: #81C6D6;
+      }
+      @include xl {
+        padding: 50px;
+      }
+    }
+    &:nth-child(4n + 4) {
+      background-color: #81C6D6;
+      padding: 110px 80px;
+      .advertising__item_title:after {
+        background-color: #ffffff;
+      }
+      @include xl {
+        padding: 50px;
+      }
+    }
+
+    // .advertising__item_title
+
+    &_title {
+      @include thisFont("Montserrat", 800, normal, 57px, #ffffff, 48px);
+      max-width: 718px;
+      @include xl {
+        font-size: 43px;
+      }
+      @include lg {
+        font-size: 35px; 
+        line-height: 45px;
+      }
+      @include sm {
+        font-size: 28px; 
+        line-height: 38px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        max-width: 120px;
+        height: 3px;
+        margin: 50px 0;
+      }
+    }
+
+    // .advertising__item_text
+
+    &_text {
+      @include thisFont("Montserrat", 400, normal, 28px, #ffffff, 20px);
+      flex: 1 0 auto;
+      max-width: 718px;
+    }
+
+    // .advertising__item_link
+
+    &_link {
+      @include whiteButtonNoActive();
+      width: 250px;
+      height: 60px;
+      margin-top: 20px;
+      &:hover {
+        @include whiteButtonActive();
+      }
+    }
+  }
+
+  // .advertising__img
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;	
+  }
+}

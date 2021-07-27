@@ -1,5 +1,4 @@
 $( document ).ready( () => {
-  console.log( 'a' );
 
   $( '.hamburger' ).on( 'click', function() {
     if ( !$( this ).hasClass( 'is-active' ) ) {
@@ -38,5 +37,25 @@ $( document ).ready( () => {
     $( '.catalog-home__chapter_descr' ).each( function() {
       $( this ).addClass( 'chapterMobile' );
     } );
-  }
+  };
+
+  // слайдер блога на главной
+  $( '.blog-home__list' ).slick( {
+    dots: true,
+    dotsClass: 'blog-home__list_dots',
+    //infinite: false,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    arrows: false,
+    responsive: [
+    {
+      breakpoint: 768,
+      settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1
+        }
+      },
+    ]
+  } );
 } );

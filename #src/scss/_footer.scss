@@ -1,0 +1,163 @@
+@import "mySmartGrid";
+
+.footer {
+  background-color: #3C3F49;
+  padding-top: 50px;
+  padding-bottom: 70px;
+
+  .container {
+    display: grid;
+    grid-template-columns: 280px 1fr 380px;
+    grid-gap: 30px;
+    @include xl {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include md {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include sm {
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 0;
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+
+    // .footer__logo_link
+
+    &_link {
+      grid-column: 1/4;
+      grid-row: 1/2;
+      max-width: 205px;
+      margin-bottom: 30px;
+      @include md {
+        grid-column: 1/3;
+        grid-row: 1/2;
+      }
+    }
+  }
+  .furniture {
+    grid-column: 1/2;
+    grid-row: 2/3;
+
+  }
+  .sections {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    @include sm {
+      grid-column: 1/2;
+      grid-row: 3/4;
+    }
+  }
+  // .footer__furniture
+
+  &__furniture {
+
+    // .footer__furniture_list
+
+    &_list {
+    }
+
+    // .footer__furniture_item
+
+    &_item {
+    }
+
+    // .footer__furniture_link
+
+    &_link {
+      @include thisFont("Montserrat", 400, normal, 32px, #ffffff, 20px);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // .footer__address
+
+  &__address {
+    grid-column: 3/4;
+    grid-row: 2/3;
+    @include md {
+      grid-column: 1/3;
+      grid-row: 3/4;
+    }
+    @include sm {
+      grid-column: 1/2;
+      grid-row: 4/5;
+    }
+
+    // .footer__address_list
+
+    &_list {
+
+    }
+
+    // .footer__address_item
+
+    &_item {
+    }
+
+    // .footer__address_span
+
+    &_span {
+      @include thisFont("Montserrat", 400, normal, 32px, #ffffff, 20px);
+    }
+
+    .requisites {
+      font-weight: 500;
+    }
+
+    // .footer__address_link
+
+    &_link {
+      @include thisFont("Montserrat", 800, normal, 32px, #81C6D6, 20px);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.email {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.copyright {
+  grid-column: 1/4;
+  grid-row: 3/4;
+  @include md {
+    grid-column: 1/3;
+    grid-row: 4/5;
+  }
+  @include sm {
+    grid-column: 1/2;
+    grid-row: 5/6;
+    flex-direction: column;
+    align-items: center;
+  }
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+
+  // .copyright__text
+
+  &__text {
+    @include thisFont("Montserrat", 400, normal, 16px, #ffffff, 12px);
+  }
+}
+.sdv {
+
+  // .sdv_logo
+
+  &_logo {
+    width: 150px;
+    height: 30px;
+    @include sm {
+      margin-top: 20px;
+    }
+  }
+}

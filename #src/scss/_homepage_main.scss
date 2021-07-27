@@ -434,12 +434,18 @@
 
   &__list {
     display: flex;
+    flex-direction: column;
   }
 
   // .blog-home__item
 
   &__item {
-    width: calc(50% - 15px);
+    max-width: calc(100% - 15px);
+    display: flex;
+    flex-direction: column;
+    @include md {
+      max-width: 100%;
+    }
 
     // .blog-home__item_img_box
 
@@ -474,11 +480,11 @@
       display: flex;
       padding-left: 35px;
       align-items: center;
+      background-repeat: no-repeat;
+      background-position: 0 center;
     }
     .top-tags {
       background-image: url(../img/content-img/blog-home-star-icon.svg);
-      background-repeat: no-repeat;
-      background-position: 0 center;
       background-size: 24px;
       margin-top: 30px;
       margin-bottom: 40px;
@@ -488,18 +494,22 @@
     &_tag {
       margin-right: 10px;
       min-height: 26px;
+      display: flex;
+      align-items: center;
     }
 
     // .blog-home__item_title
 
     &_title {
       @include thisFont("Montserrat", 800, normal, 50px, #000000, 42px);
+      margin-bottom: 45px;
     }
 
     // .blog-home__item_text
 
     &_text {
       @include thisFont("Montserrat", 400, normal, 28px, #000000, 20px);
+      flex: 1 0 auto;
     }
   }
 
@@ -524,7 +534,39 @@
     background-size: 24px;
     padding-left: 35px;
     min-height: 28px;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+  }
+  .bottom-tags {
+    margin-top: 35px;
+    background-image: url(../img/content-img/blog-home-tag-icon.svg);
+  }
+  .blog-home__list_dots {
+    display: flex;
+    margin: 20px auto 0 auto;
+    li {
+      margin-right: 15px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .slick-active button {
+      width: 18px;
+      height: 18px;
+      font-size: 0;
+      background-color: #ffffff;
+      border-radius: 50%;
+      border: 3px solid #000000;
+      box-sizing: border-box;
+    }
+    button {
+      width: 12px;
+      height: 12px;
+      font-size: 0;
+      background-color: #000000;
+      border-radius: 50%;
+      border: none;
+    }
   }
 }
 
