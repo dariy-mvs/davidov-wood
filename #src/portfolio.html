@@ -15,10 +15,22 @@
   <script src="js/index.js"></script>
   <title>davydov-wood</title>
 </head>
-<body class="homepage">
-@@include("_header_homepage.html")
-@@include("_homepage_main.html")
-@@include("_homepage_rec.html")
+<body class="portfolio">
+@@include("_header.html")
+<div class="breadcrumbs">
+  <ul class="breadcrumbs__list container">
+    <li class="breadcrumbs__item">
+      <a href="" class="breadcrumbs__link">
+        <span class="breadcrumbs__link_text">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumbs__item"><span class="breadcrumbs__span">Портфолио</span></li>
+  </ul>
+</div>
+<main>
+@@include("_portfolio_main.html")
+</main>
+@@include("_form_question.html")
 @@include("_footer.html")
 </body>
 </html>

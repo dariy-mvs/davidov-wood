@@ -66,7 +66,17 @@ body {
   background-image: url(../img/content-img/background_home.jpg);
   background-size: cover;
 }
+.about-company .header {
+    background-image: url(../img/content-img/header_about_us.jpg);
+    background-size: cover;
+}
+.portfolio .header {
+  background-image: url(../img/content-img/portfolio_header.jpg);
+  background-size: cover;
+}
 
 @import "homepage_main";
 @import "homepage_advertising";
 @import "_footer";
+@import "about-company_main";
+@import "portfolio_main";

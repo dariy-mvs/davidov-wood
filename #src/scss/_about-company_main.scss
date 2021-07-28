@@ -1,0 +1,325 @@
+@import "mySmartGrid";
+
+.about-us__preview {
+  margin-top: 103px;
+  @include md {
+    margin-top: 50px;
+  }
+}
+
+.about-us {
+
+  // .about-us__catalog
+
+  &__catalog {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    @include md {
+      flex-direction: column;
+    }
+
+    // .about-us__catalog_list
+
+    &_list {
+      max-width: 486px;
+      width: calc(50% - 25px);
+      padding-top: 60px;
+      padding-bottom: 60px;
+      @include md {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    picture {
+      max-width: 486px;
+      width: calc(50% - 25px);
+      @include md {
+        width: 100%;
+        max-width: 100%;
+      }
+    }
+
+    // .about-us__catalog_list
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    // .about-us__catalog_item
+
+    &_item {
+      min-height: 60px;
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      @include sm {
+        margin-bottom: 20px;
+      }
+    }
+
+    // .about-us__catalog_link
+
+    &_link {
+      @include blueButtonNoActive();
+      width: 100%;
+      min-height: 60px;
+      padding: 0 30px;
+      justify-content: space-between;
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 25px;
+        background-image: url(../img/content-img/arrow_about-us.svg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center center;
+        @include sm {
+          width: 40px;
+          height: 20px;
+          margin-left: 10px;
+        }
+      }
+
+      &:hover {
+        .about-us__catalog_linktext {
+          color: #ffffff;
+        }
+        &::after {
+          background-image: url(../img/content-img/arrow_about-us_white.svg);
+        }
+      }
+    }
+
+    // .about-us__catalog_linktext
+
+    &_linktext {
+    }
+  }
+
+  // .about-us__propose
+
+  &__propose {
+    width: 100%;
+    display: flex;
+    margin-top: 130px;
+    @include md {
+      flex-direction: column;
+      margin-top: 50px;
+    }
+
+    picture {
+      width: 50%;
+      @include md {
+        width: 100%;
+        order: 1;
+      }
+    }
+
+    // .about-us__propose_img
+
+    &_img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    // .about-us__propose_text
+
+    &_text {
+      width: 50%;
+      padding: 110px 80px;
+      box-sizing: border-box;
+      background-color: #81C6D6;
+      
+      @include xl {
+        padding: 50px;
+      }
+      @include md {
+        width: 100%;
+        order: 2;
+      }
+    }
+
+    // .about-us__propose_title
+
+    &_title {
+      @include thisFont("Montserrat", 800, normal, 57px, #ffffff, 48px);
+      max-width: 718px;
+      
+      @include xl {
+        font-size: 43px;
+      }
+      @include lg {
+        font-size: 35px; 
+        line-height: 45px;
+      }
+      @include sm {
+        font-size: 28px; 
+        line-height: 38px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        max-width: 120px;
+        height: 3px;
+        margin: 50px 0;
+        background-color: #fff;
+      }
+    }
+
+    // .about-us__propose_descr_box
+
+    &_descr_box {
+      @include thisFont("Montserrat", 400, normal, 28px, #ffffff, 20px);
+      flex: 1 0 auto;
+      max-width: 718px;
+    }
+
+    // .about-us__propose_descr
+
+    &_descr {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  // .about-us__descriptions
+
+  &__descriptions {
+    @include marginBlock();
+  }
+
+  // .about-us__descr
+  
+  &__descr {
+
+    // .about-us__descr_text
+
+    &_text {
+      margin-bottom: 30px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.form-question {
+  display: flex;
+  flex-wrap: wrap;
+  @include md {
+    flex-direction: column;
+  }
+
+  picture {
+    width: 50%;
+    @include md {
+      width: 100%;
+      order: 2;
+    }
+  }
+
+}
+.about-us {
+
+		// .about-us__propose
+
+		&__propose {
+
+			// .about-us__propose_img
+
+			&_img {
+			}
+		}
+}
+.question-form {
+  display: flex;
+  flex-direction: column;
+  padding: 110px 80px;
+  box-sizing: border-box;
+  background-color: #3C3F49;
+  width: 50%;
+  @include xl {
+    padding: 50px;
+  }
+  @include md {
+    width: 100%;
+    order: 1;
+  }
+
+
+		// .question-form__field
+
+		&__field {
+      @include fieldBorder();
+      height: 60px;
+      max-width: 436px;
+      margin-bottom: 5px;
+      padding: 0 25px;
+      box-sizing: border-box;
+		}
+
+		// .question-form__comment
+
+		&__comment {
+      @include fieldBorder();
+      max-width: 436px;
+      padding: 25px 20px;
+      box-sizing: border-box;
+		}
+
+		// .question-form__submit
+
+		&__submit {
+      @include blueButtonNoActive();
+      max-width: 250px;
+      height: 60px;
+      margin-top: 50px;
+      padding: 0 25px;
+      &:hover {
+        @include blueButtonActive();
+      }
+		}
+}
+.guestion-form {
+
+		// .guestion-form__title
+
+		&__title {
+      @include thisFont("Montserrat", 800, normal, 57px, #ffffff, 48px);
+      max-width: 718px;
+      @include xl {
+        font-size: 43px;
+      }
+      @include lg {
+        font-size: 35px; 
+        line-height: 45px;
+      }
+      @include sm {
+        font-size: 28px; 
+        line-height: 38px;
+      }
+      &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        max-width: 120px;
+        height: 3px;
+        margin: 50px 0;
+        background-color: #81C6D6;
+      }
+		}
+}
+
+
+

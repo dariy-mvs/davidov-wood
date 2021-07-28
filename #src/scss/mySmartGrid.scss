@@ -49,7 +49,7 @@
 
 @mixin fieldBorder {
   @include placeholder(#000000, 20px, "Montserrat");
-  @include thisFont("Montserrat", 700, normal, 28px #000000, 20px);
+  @include thisFont("Montserrat", 700, normal, 28px, #000000, 20px);
   border: 2px solid #81C6D6;
   box-sizing: border-box;
   border-radius: 3px;
@@ -109,6 +109,25 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+}
+
+@mixin marginBlock {
+  margin-top: 130px;
+  margin-bottom: 130px;
+  @include lg {
+    margin-top: 130px;
+    margin-bottom: 130px;
+  }
+  @include md {
+    margin-top: 90px;
+    margin-bottom: 90px;
+    grid-row-gap: 20px;
+    justify-items: center;
+  }
+  @include sm {
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
 }
 
 // mixins популярных брекпоинтов

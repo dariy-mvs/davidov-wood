@@ -392,3 +392,64 @@
     }
   }
 }
+.page_header {
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 90px;
+  @include lg {
+    padding-bottom: 70px;
+  }
+  @include md {
+    padding-bottom: 50px;
+  }
+}
+
+.breadcrumbs {
+  position: relative;
+  &::after {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 1px;
+    background-color: #81C6D6;
+    position: absolute;
+    top: 100%;
+    //left: 0;
+    //right: 0;
+  }
+
+  // .breadcrumbs__list
+
+  &__list {
+    display: flex;
+  }
+
+  // .breadcrumbs__item
+
+  &__item {
+    @include thisFont("Montserrat", 400, normal, 46px, #000000, 14px);
+  }
+  &__link_text {
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // .breadcrumbs__link
+
+  &__link {
+    color: #0F7F99;
+    text-decoration: none;
+    &::after {
+      content: "/";
+      margin: 0 10px;
+    }
+  }
+
+  // .breadcrumbs__span
+
+  &__span {
+  }
+}
+

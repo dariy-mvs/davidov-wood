@@ -1,5 +1,4 @@
 $( document ).ready( () => {
-
   $( '.hamburger' ).on( 'click', function() {
     if ( !$( this ).hasClass( 'is-active' ) ) {
       $( this ).addClass( 'is-active' );
@@ -37,25 +36,60 @@ $( document ).ready( () => {
     $( '.catalog-home__chapter_descr' ).each( function() {
       $( this ).addClass( 'chapterMobile' );
     } );
-  };
+  }
 
   // слайдер блога на главной
   $( '.blog-home__list' ).slick( {
     dots: true,
     dotsClass: 'blog-home__list_dots',
-    //infinite: false,
+
+    // infinite: false,
     speed: 300,
     slidesToShow: 2,
     slidesToScroll: 1,
     arrows: false,
     responsive: [
-    {
-      breakpoint: 768,
-      settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
         }
-      },
+      }
     ]
+  } );
+
+  // пагинация для портфолио
+  const items = $( '.portfolio__list .portfolio__item' );
+  const numItems = items.length;
+  const perPage = 6;
+
+  items.slice( perPage ).hide();
+  $( '.pagination-container' ).pagination( {
+    items: numItems,
+    itemsOnPage: perPage,
+    prevText: '&laquo;',
+    nextText: '&raquo;',
+    onPageClick( pageNumber ) {
+      const showFrom = perPage * ( pageNumber - 1 );
+      const showTo = showFrom + perPage;
+      items.hide().slice( showFrom, showTo ).show();
+      $( 'html, body' ).animate( { scrollTop: 0 }, 100 );
+    }
+  } );
+
+  // popup для портфолио
+  $( '.portfolio__list' ).magnificPopup( {
+    delegate: 'img',
+    type: 'image',
+    gallery: {
+      enabled: true
+    },
+    callbacks: {
+      elementParse( itemImg ) {
+        const elem = itemImg;
+        elem.src = elem.el.attr( 'src' );
+      }
+    }
   } );
 } );

@@ -110,22 +110,7 @@
 .preview-page {
   display: grid;
   grid-template-columns: auto 250px;
-  margin-top: 130px;
-  margin-bottom: 130px;
-  @include lg {
-    margin-top: 130px;
-    margin-bottom: 130px;
-  }
-  @include md {
-    margin-top: 90px;
-    margin-bottom: 90px;
-    grid-row-gap: 20px;
-    justify-items: center;
-  }
-  @include sm {
-    margin-top: 50px;
-    margin-bottom: 50px;
-  }
+  @include marginBlock();
 
   // .preview-page__title
 
