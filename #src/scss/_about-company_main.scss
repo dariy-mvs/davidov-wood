@@ -257,38 +257,23 @@
     order: 1;
   }
 
-
 		// .question-form__field
 
 		&__field {
-      @include fieldBorder();
-      height: 60px;
       max-width: 436px;
-      margin-bottom: 5px;
-      padding: 0 25px;
-      box-sizing: border-box;
 		}
 
 		// .question-form__comment
 
 		&__comment {
-      @include fieldBorder();
       max-width: 436px;
-      padding: 25px 20px;
-      box-sizing: border-box;
 		}
 
+    
 		// .question-form__submit
 
 		&__submit {
-      @include blueButtonNoActive();
-      max-width: 250px;
-      height: 60px;
-      margin-top: 50px;
-      padding: 0 25px;
-      &:hover {
-        @include blueButtonActive();
-      }
+      
 		}
 }
 .guestion-form {

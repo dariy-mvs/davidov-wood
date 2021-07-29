@@ -60,12 +60,14 @@ $( document ).ready( () => {
   } );
 
   // пагинация для портфолио
-  const items = $( '.portfolio__list .portfolio__item' );
-  const numItems = items.length;
-  const perPage = 6;
 
-  items.slice( perPage ).hide();
-  $( '.pagination-container' ).pagination( {
+  function pagination(parentSelector, itemSelector, itemPage) {
+    const items = $( `${parentSelector} ${itemSelector}`);
+    const numItems = items.length;
+    const perPage = itemPage;
+
+    items.slice( perPage ).hide();
+    $( '.pagination-container' ).pagination( {
     items: numItems,
     itemsOnPage: perPage,
     prevText: '&laquo;',
@@ -77,6 +79,11 @@ $( document ).ready( () => {
       $( 'html, body' ).animate( { scrollTop: 0 }, 100 );
     }
   } );
+  };
+  
+  pagination('.portfolio__list', '.portfolio__item', 6);
+  pagination('.blog-main__list', '.blog-home__item', 5);
+
 
   // popup для портфолио
   $( '.portfolio__list' ).magnificPopup( {
