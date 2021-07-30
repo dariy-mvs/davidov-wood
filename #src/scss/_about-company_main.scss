@@ -221,6 +221,19 @@
     flex-direction: column;
   }
 
+   .form-question__map {
+    width: 50%;
+    background-color: #3C3F49;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @include md {
+      width: 100%;
+      order: -1;
+      max-height: 400px;
+    }
+  }
+
   picture {
     width: 50%;
     @include md {

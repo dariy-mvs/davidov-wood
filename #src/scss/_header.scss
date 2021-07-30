@@ -405,7 +405,7 @@
   }
 }
 
-.breadcrumbs {
+body .breadcrumbs {
   position: relative;
   &::after {
     content: "";
@@ -421,8 +421,11 @@
 
   // .breadcrumbs__list
 
-  &__list {
+  .breadcrumbs__list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-top: 0;
   }
 
   // .breadcrumbs__item
@@ -431,6 +434,8 @@
     @include thisFont("Montserrat", 400, normal, 46px, #000000, 14px);
   }
   &__link_text {
+    color: #0F7F99;
+    text-decoration: none;
     &:hover {
       text-decoration: underline;
     }
@@ -439,7 +444,6 @@
   // .breadcrumbs__link
 
   &__link {
-    color: #0F7F99;
     text-decoration: none;
     &::after {
       content: "/";

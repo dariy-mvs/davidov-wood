@@ -17,6 +17,23 @@
 </head>
 <body class="blog-item">
 @@include("_header.html")
+<div class="breadcrumbs">
+  <ul class="breadcrumbs__list container">
+    <li class="breadcrumbs__item">
+      <a href="" class="breadcrumbs__link">
+        <span class="breadcrumbs__link_text">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="" class="breadcrumbs__link">
+        <span class="breadcrumbs__link_text">Блог</span>
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__span">Скамья из дерева</span>
+    </li>
+  </ul>
+</div>
 <div class="container">
   @@include("_blog-aside.html")
   <main class="blog-main">
@@ -69,20 +86,40 @@
           </li>
         </ul>
     </div>
-    <div class="comments">
-      <h3 class="comments__title">Комментарии</h3>
-      <div class="comments__comment comment comment-first">
+  </main>
+  <div class="comments">
+    <h3 class="comments__title">Комментарии</h3>
+    <div class="comments__comment comment-first">
+      <span class="comment__noimg">AG</span>
+      <p class="comment__text">При соблюдении простых правил ухода, садовая скамья из дерева сама по себе будет украшением сада и поможет вам наслаждаться природой в комфорте.</p>
+      <a href="" class="comment__link">Ответить </a>
+      <div class="comments__comment sub-comment">
         <span class="comment__noimg">AG</span>
         <p class="comment__text">При соблюдении простых правил ухода, садовая скамья из дерева сама по себе будет украшением сада и поможет вам наслаждаться природой в комфорте.</p>
-        <a href="" class="comment__link">Ответить </a>
-        <div class="comments__comment comment">
-          <span class="comment__noimg">AG</span>
-          <p class="comment__text">При соблюдении простых правил ухода, садовая скамья из дерева сама по себе будет украшением сада и поможет вам наслаждаться природой в комфорте.</p>
-          <a href="" class="comment__link"></a>
-        </div>
+        <a href="" class="comment__link">Ответить</a>
       </div>
     </div>
-  </main>
+    <div class="comments__write_box">
+      <button class="comments__write">Написать</button>
+      <ul class="comments__social_box">
+        <li class="comments__social_item">
+          <a href="" class="comments__social_link vk">
+            <span class="comments__social_text">ВКонтакте</span>
+          </a>
+        </li>
+        <li class="comment__social_item">
+          <a href="" class="comments__social_link ok">
+            <span class="comments__social_text">Одноклассники</span>
+          </a>
+        </li>
+        <li class="comments__social_item">
+          <a href="" class="comments__social_link fb">
+            <span class="comments__social_text">Facebook</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
 @@include("_footer.html")
 </body>

@@ -98,8 +98,20 @@ p, span, .paragraph {
   background-image: url(../img/content-img/portfolio_header.jpg);
   background-size: cover;
 }
-.blog-list .header {
+.blog-list .header, .catalog .header {
   background-image: url(../img/content-img/blog-list-header.jpg);
+  background-size: cover;
+}
+.blog-item .header {
+  background-image: url(../img/content-img/header-blog-item.jpg);
+  background-size: cover;
+}
+.cooperation .header {
+  background-image: url(../img/content-img/cooperation-header.jpg);
+  background-size: cover;
+}
+.contacts .header {
+  background-image: url(../img/content-img/contacts-header.jpg);
   background-size: cover;
 }
 
@@ -109,3 +121,6 @@ p, span, .paragraph {
 @import "about-company_main";
 @import "portfolio_main";
 @import "blog-aside";
+@import "cooperation";
+@import "contacts";
+@import "catalog";

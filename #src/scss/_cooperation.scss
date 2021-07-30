@@ -1,0 +1,142 @@
+@import "mySmartGrid";
+
+.cooperation {
+
+  // .cooperation__title
+
+  &__title {
+    margin-top: 103px;
+    margin-bottom: 103px;
+    @include md {
+      margin-top: 70px;
+      margin-bottom: 103px;
+    }
+    &:first-child {
+      margin-bottom: 50px;
+      @include md {
+        margin-bottom: 50px;
+      }
+    }
+  }
+
+  // .cooperation__descr
+
+  &__descr {
+  }
+
+  // .cooperation__directions
+
+  &__directions {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 30px;
+    margin-top: 90px;
+    @include md {
+      margin-top: 50px;
+      grid-template-columns: repeat(1, 1fr);
+      grid-column-gap: 0;
+    }
+
+    // .cooperation__directions_item
+
+    &_item {
+      min-height: 400px;
+      @include lg {
+        min-height: 350px;
+      }
+    }
+
+    // .cooperation__directions_title
+
+    &_title {
+      @include thisFont("Montserrat", 700, normal, 37px, #ffffff, 27px);
+      max-width: 440px;
+      text-transform: uppercase;
+      @include sm {
+        font-size: 20px;
+        line-height: 30px;
+      }
+    }
+  }
+  .arch {
+    background-image: url(../img/content-img/cooperation-arch.jpg);
+  }
+  .post {
+    background-image: url(../img/content-img/cooperation-post.png);
+  }
+  // .cooperation__direction
+
+  &__direction {
+
+    // .cooperation__direction_link
+
+    &_link {
+      @include thisFont("Montserrat", 700, normal, 37px, #ffffff, 27px);
+      width: 100%;
+      height: 100%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-decoration: none;
+      display: block;
+      box-sizing: border-box;
+      padding: 70px 60px;
+      @include md {
+        padding: 30px;
+      }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+.cooperation {
+
+  // .cooperation__benefits
+
+  &__benefits {
+    &:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    // .cooperation__benefits_img
+
+    &_img {
+      float: left;
+      margin-right: 100px;
+      margin-bottom: 100px;
+      @include md {
+        float: none;
+        width: 100%;
+        height: auto;
+        margin-right: 0;
+        margin-bottom: 50px;
+      }
+    }
+
+    // .cooperation__benefits_text
+
+    &_text {
+      margin-bottom: 50px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.benefits-fat {
+  @include thisFont("Montserrat", 700, normal, 28px, #000000, 20px);
+}
+
+.cooperation .blog-item__quote {
+  margin-bottom: 130px;
+  @include md{
+    margin-bottom: 90px;
+  }
+  @include sm {
+    margin-bottom: 50px;
+  }
+}
