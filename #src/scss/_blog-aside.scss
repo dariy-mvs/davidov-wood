@@ -319,6 +319,9 @@
   &__title {
     margin-bottom: 50px;
     @include thisFont("Montserrat", 700, normal, 50px, #000000, 42px);
+    @include sm {
+      font-size: 35px;
+    }
   }
 
   // .comments__comment
@@ -406,25 +409,75 @@
     @include blueButtonNoActive();
     width: 250px;
     height: 60px;
+    grid-column: 1/2;
+    @include md {
+      grid-row: 2/3;
+    }
     
     &:hover {
       @include blueButtonActive();
     }
 
+    //.comments__write_field
+    &_field {
+      @include fieldBorder();
+      width: 100%;
+      min-height: 150px;
+
+    }
+
+    // .comments__write_form
+    &_form {
+      grid-column: 1/3;
+      grid-row: 2/3;
+      width: 100%;
+      min-height: 150px;
+      
+      @include md {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+    }
+
+    
+
+    // .comments__write_submit
+    &_submit {
+      @include blueButtonNoActive();
+      width: 250px;
+      height: 60px;
+      margin-top: 20px;
+      margin-left: auto;
+      &:hover {
+        @include blueButtonActive();
+      }
+      @include md {
+        margin-right: auto;
+      }
+    }
+
+
+
     // .comments__write_box
 
     &_box {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
+      display: grid;
+      width: 100%;
+      grid-gap: 30px;
+      justify-items: start;
+      grid-template-columns: repeat(2, 1fr);
       margin-top: 60px;
-      margin-bottom: 130px;
+      margin-bottom: 30px;
       @include md{
         margin-bottom: 70px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-column-gap: 0;
       }
     }
   }
-
+  .formHidden {
+    visibility: hidden;
+  }
   // .comments__social
 
   &__social {
@@ -433,9 +486,12 @@
 
     &_box {
       display: flex;
+      grid-column: 2/3;
+      grid-row: 1/2;
+      justify-self: end;
       @include md {
-        order: -1;
-        margin-bottom: 20px;
+        grid-column: 1/2;
+        justify-self: start;
       }
     }
 

@@ -325,6 +325,16 @@
       }
     }
 
+    // .garantee-home__link
+
+    .garantee-home__link {
+      @include thisFont("Montserrat", 700, normal, 28px, #0F7F99, 20px);
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
     // .garantee-home__item_text
 
     &_text {

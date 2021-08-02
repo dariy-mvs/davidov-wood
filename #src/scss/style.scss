@@ -8,6 +8,10 @@ body {
   @include container();
 }
 
+.breadcrumbs__container {
+  @include container();
+}
+
 h1, .header1 {
   @include thisFont("Montserrat", 800, normal, 78px, #000000, 65px);
   @include md {
@@ -115,6 +119,11 @@ p, span, .paragraph {
   background-size: cover;
 }
 
+.product .header {
+  background-image: url(../img/content-img/product-header.jpg);
+  background-size: cover;
+}
+
 @import "homepage_main";
 @import "homepage_advertising";
 @import "_footer";
@@ -124,3 +133,4 @@ p, span, .paragraph {
 @import "cooperation";
 @import "contacts";
 @import "catalog";
+@import "product";

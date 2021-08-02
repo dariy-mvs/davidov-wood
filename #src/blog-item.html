@@ -18,7 +18,7 @@
 <body class="blog-item">
 @@include("_header.html")
 <div class="breadcrumbs">
-  <ul class="breadcrumbs__list container">
+  <ul class="breadcrumbs__list breadcrumbs__container">
     <li class="breadcrumbs__item">
       <a href="" class="breadcrumbs__link">
         <span class="breadcrumbs__link_text">Главная</span>
@@ -101,6 +101,11 @@
     </div>
     <div class="comments__write_box">
       <button class="comments__write">Написать</button>
+      <form action="" class="comments__write_form formHidden">
+        <textarea name="" id="" class="comments__write_field"></textarea>
+        <button class="comments__write_submit">Отправить</button>
+      </form>
+      
       <ul class="comments__social_box">
         <li class="comments__social_item">
           <a href="" class="comments__social_link vk">
