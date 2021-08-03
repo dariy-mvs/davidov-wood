@@ -2,6 +2,7 @@
 
 .header {
   position: relative;
+  background-size: cover;
   &::after {
     content: "";
     display: block;
@@ -269,7 +270,7 @@
   &__slider {
     position: relative;
     z-index: 2;
-    margin-top: 182px;
+    margin-top: 24px;
     @include lg {
       margin-top: 120px;
     }
@@ -290,7 +291,7 @@
     }
     .slick-prev {
       background-image: url(../img/content-img/arrow-left.svg);
-      left: 70%;
+      left: 74%;
       @include xl {
         left: auto;
         right: 100px;
@@ -298,7 +299,7 @@
     }
     .slick-next {
       background-image: url(../img/content-img/arrow-right.svg);
-      left: 75%;
+      left: 78.5%;
       @include xl {
         left: auto;
         right: 20px;
@@ -307,7 +308,7 @@
     .header__slider_dots {
       position: absolute;
       bottom: 100px;
-      left: 20%;
+      left: 18.5%;
       display: flex;
       @include xl {
         left: 20px;
@@ -362,14 +363,11 @@
       width: 100%;
       max-width: 450px;
       margin-top: 20px;
-      font-size: 50px;
       @include md {
         max-width: 460px;
-        font-size: 35px;
       }
       @include sm {
         max-width: 320px;
-        font-size: 28px;
       }
     }
 
@@ -433,11 +431,17 @@ body .breadcrumbs {
   &__item {
     @include thisFont("Montserrat", 400, normal, 46px, #000000, 14px);
   }
+
+  // .breadcrumbs__link_text
+
   &__link_text {
     color: #0F7F99;
     text-decoration: none;
     &:hover {
       text-decoration: underline;
+    }
+    @include sm {
+      font-size: 16px;
     }
   }
 
@@ -454,6 +458,9 @@ body .breadcrumbs {
   // .breadcrumbs__span
 
   &__span {
+    @include sm {
+      font-size: 16px;
+    }
   }
 }
 

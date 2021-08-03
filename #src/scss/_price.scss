@@ -1,0 +1,130 @@
+@import "mySmartGrid";
+
+.container {
+}
+.price {
+
+		// .price__text
+
+		&__text {
+      margin-top: 103px;
+      margin-bottom: 103px;
+      @include md {
+        margin-top: 70px;
+        margin-bottom: 70px;
+      }
+		}
+
+		// .price__colortext
+
+		&__colortext {
+      background-color: #81C6D6;
+      @include thisFont("Montserrat", 700, normal, 37px, #ffffff, 27px);
+      text-align: center;
+      padding: 60px;
+		}
+
+		// .price__formation
+
+		&__formation {
+      @include marginBlock();
+
+			// .price__formation_title
+
+			&_title {
+        margin-bottom: 50px;
+			}
+
+			// .price__formation_descr
+
+			&_descr {
+        margin-bottom: 100px;
+        @include md {
+          margin-bottom: 50px;
+        }
+			}
+
+			// .price__formation_item-title
+
+			&_item-title {
+        @include thisFont("Montserrat", 700, normal, 37px, #000000, 27px);
+        margin-bottom: 40px;
+			}
+
+			// .price__formation_item-descr
+
+			&_item-descr {
+        @include thisFont("Montserrat", 500, normal, 28px, #000000, 20px);
+			}
+
+			// .price__formation_item
+
+			&_item {
+			}
+		}
+}
+.about-us {
+
+		// .about-us__specials
+
+		&__specials {
+		}
+
+		// .about-us__special
+
+		&__special {
+		}
+}
+.info-item {
+  background-color: #3C3F49;
+  padding: 50px 40px 30px 40px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+
+		// .info-item__descr
+
+		&__descr {
+      @include thisFont("Montserrat", 500, normal, 28px, #ffffff, 20px);
+      grid-column: 1/3;
+      @include md {
+        text-align: center;
+      }
+		}
+
+		// .info-item__logo
+
+		&__logo {
+      width: 205px;
+      height: 69px;
+      justify-self: end;
+      @include lg {
+        grid-column: 1/3;
+        grid-row: 3/4;
+        justify-self: center;
+      }
+		}
+
+    // 
+
+    &__link {
+      @include thisFont("Montserrat", 700, normal, 37px, #81C6D6, 27px);
+      text-decoration: none;
+      align-self: center;
+      margin-top: 12px;
+      &:hover {
+        text-decoration: underline;
+      }
+      @include xl {
+        font-size: 20px;
+        line-height: 30px;
+      }
+      @include lg {
+        grid-column: 1/3;
+        grid-row: 2/3;
+        justify-self: center;
+      }
+    }
+}
+

@@ -87,19 +87,24 @@ $( document ).ready( () => {
 
 
   // popup для портфолио
-  $( '.portfolio__list' ).magnificPopup( {
-    delegate: 'img',
-    type: 'image',
-    gallery: {
-      enabled: true
-    },
-    callbacks: {
-      elementParse( itemImg ) {
-        const elem = itemImg;
-        elem.src = elem.el.attr( 'src' );
+
+  function popupImg(selector) {
+    $( selector ).magnificPopup( {
+      delegate: 'img',
+      type: 'image',
+      gallery: {
+        enabled: true
+      },
+      callbacks: {
+        elementParse( itemImg ) {
+          const elem = itemImg;
+          elem.src = elem.el.attr( 'src' );
+        }
       }
-    }
-  } );
+    } );
+  };
+
+  popupImg('.portfolio__list');
 
   // показ поля комментов 
 
@@ -121,7 +126,6 @@ $( document ).ready( () => {
     slidesToScroll: 1,
     vertical: true,
     asNavFor: '.product__big_slider',
-    //dots: true,
     centerMode: false,
     focusOnSelect: true,
     responsive: [
@@ -151,6 +155,13 @@ $( document ).ready( () => {
     slidesToScroll: 1,
     arrows: true,
     responsive: [
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1
+        }
+      },
       {
         breakpoint: 768,
         settings: {
@@ -187,5 +198,29 @@ $( document ).ready( () => {
         content.innerHTML = '<p>Контент video</p>'
       } 
     }
-  })
+  });
+
+  // отзывы popup для фото
+
+  popupImg('.review__img_box');
+
+  // пагинация для отзывов 
+
+  pagination('.reviews__list', '.reviews__item', 5);
+
+  // форма обратной связи
+
+  function addPopup(selector) {
+    $(selector).on('click', () => {
+      $('.callback').css("display", "flex");
+    });
+  }
+  addPopup('.header__nav_button');
+
+  $('.callback').on('click', (event) => {
+    let target = event.target;
+    if (target.classList.contains('callback__esc')|| !target.closest('.callback__box')) {
+      $('.callback').css("display", "none");
+    }
+  });
 } );

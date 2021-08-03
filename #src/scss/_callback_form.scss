@@ -1,0 +1,109 @@
+@import "mySmartGrid";
+
+.callback {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 8;
+  background-color: rgba(60, 63, 73, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  display: none;
+
+  // .callback__box
+
+  &__box {
+    background-color: #fff;
+    width: calc(100% - 50px);
+    max-width: 590px;
+    
+  }
+
+  // .callback__img
+
+  &__img {
+
+    // .callback__img_box
+
+    &_box {
+      background-image: url(../img/content-img/callback-header.jpg);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: cover;
+      height: 200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      box-sizing: border-box;
+      padding: 25px;
+    }
+  }
+
+  // .callback__logo
+
+  &__logo {
+    width: 150px;
+    height: 50px;
+  }
+
+  // .callback__esc
+
+  &__esc {
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    background-image: url(../img/content-img/esc-icon.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+
+  // .callback__form
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 75px 80px 75px;
+  }
+
+  // .callback__title
+
+  &__title {
+    text-align: center;
+    margin-bottom: 65px;
+  }
+
+  // .callback__input
+
+  &__input {
+    @include fieldBorder();
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  // .callback__textarea
+
+  &__textarea {
+    @include fieldBorder();
+    width: 100%;
+    min-height: 145px;
+  }
+
+  // .callback__submit
+
+  &__submit {
+    @include blueButtonNoActive();
+    width: 250px;
+    height: 60px;
+    margin-top: 50px;
+    &:hover {
+      @include blueButtonActive();
+    }
+  }
+}

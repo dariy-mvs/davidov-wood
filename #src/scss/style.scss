@@ -92,36 +92,36 @@ p, span, .paragraph {
 
 .homepage .header {
   background-image: url(../img/content-img/background_home.jpg);
-  background-size: cover;
 }
 .about-company .header {
     background-image: url(../img/content-img/header_about_us.jpg);
-    background-size: cover;
 }
 .portfolio .header {
   background-image: url(../img/content-img/portfolio_header.jpg);
-  background-size: cover;
 }
 .blog-list .header, .catalog .header {
   background-image: url(../img/content-img/blog-list-header.jpg);
-  background-size: cover;
 }
 .blog-item .header {
   background-image: url(../img/content-img/header-blog-item.jpg);
-  background-size: cover;
 }
 .cooperation .header {
   background-image: url(../img/content-img/cooperation-header.jpg);
-  background-size: cover;
 }
 .contacts .header {
   background-image: url(../img/content-img/contacts-header.jpg);
-  background-size: cover;
 }
 
 .product .header {
   background-image: url(../img/content-img/product-header.jpg);
-  background-size: cover;
+}
+
+.reviews .header {
+  background-image: url(../img/content-img/reviews-header.jpg);
+}
+
+.price .header {
+  background-image: url(../img/content-img/price-header.jpg);
 }
 
 @import "homepage_main";
@@ -134,3 +134,6 @@ p, span, .paragraph {
 @import "contacts";
 @import "catalog";
 @import "product";
+@import "reviews";
+@import "price";
+@import "callback_form";

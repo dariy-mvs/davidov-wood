@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="css/hamburgers.css">
+  <link rel="stylesheet" href="css/slick.css">
+  <link rel="stylesheet" href="css/simplePagination.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/slick.js"></script>
+  <script src="js/jquery.simplePagination.js"></script>
+  <script src="js/jquery.magnific-popup.js"></script>
+  <script src="js/index.js"></script>
+  <title>davydov-wood</title>
+</head>
+<body class="reviews">
+@@include("_header.html")
+<div class="breadcrumbs">
+  <ul class="breadcrumbs__list breadcrumbs__container">
+    <li class="breadcrumbs__item">
+      <a href="" class="breadcrumbs__link">
+        <span class="breadcrumbs__link_text">Главная</span>
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <a href="" class="breadcrumbs__link">
+        <span class="breadcrumbs__link_text">О компании</span>
+      </a>
+    </li>
+    <li class="breadcrumbs__item">
+      <span class="breadcrumbs__span">Отзывы</span>
+    </li>
+  </ul>
+</div>
+<main class="reviews-main container">
+  <div class="review__descr">
+    <p class="review__descr_text">Отзывы об услугах компании позволяют посмотреть на неё глазами клиентов. Мы решили не лишать своих заказчиков такой возможности. На этой странице представлены отзывы реальных клиентов компании «Давыдов и Ко», которые смогли оценить сотрудничество с нами. Уверены, Вы сможете составить о нас непредвзятое и объективное мнение!</p>
+    <button class="review__write_btn">Оставить отзыв</button>
+  </div>
+  <ul class="reviews__list">
+    <li class="reviews__item">
+      @@include("_review-no-img.html")
+    </li>
+    <li class="reviews__item">
+      @@include("_review-img.html")
+    </li>
+    <li class="reviews__item">
+      @@include("_review-no-img.html")
+    </li>
+    <li class="reviews__item">
+      @@include("_review-img.html")
+    </li>
+    <li class="reviews__item">
+      @@include("_review-no-img.html")
+    </li>
+    <li class="reviews__item">
+      @@include("_review-img.html")
+    </li>
+    <li class="reviews__item">
+      @@include("_review-img.html")
+    </li>
+  </ul>
+  <div class="pagination-container"></div>
+</main>
+@@include("_form_question.html")
+@@include("_footer.html")
+@@include("_callback_form.html")
+</body>
+</html>
