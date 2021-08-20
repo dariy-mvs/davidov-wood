@@ -3,25 +3,12 @@
 .header {
   position: relative;
   background-size: cover;
-  &::after {
-    content: "";
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1;
-    background: linear-gradient(179.96deg, rgba(6, 13, 30, 0.15) 14.79%, rgba(6, 13, 30, 0.5) 45.68%);
-  }
   // .header__menu
 
   &__menu {
     min-height: 240px;
     display: grid;
     grid-template-columns: min-content auto min-content;
-    position: relative;
-    z-index: 2;
     padding-top: 15px;
     height: max-content;
     @include md {
@@ -222,15 +209,18 @@
     // .header__nav_sublist
 
     &__nav_sublist {
-      display: none;
+      visibility: hidden;
       flex-direction: column;
+      display: flex;
+      max-height: 0;
       background-color: rgba(255, 255, 255, 0.85);
       border-top: 3px solid #81C6D6;
       padding: 10px 35px;
       position: absolute;
-      z-index: 3;
+      z-index: 5;
       top: 100%;
       width: max-content;
+      transition: max-height 0.5s ease-out;
       @include xl {
         top: 0;
         right: 100%;
@@ -243,14 +233,20 @@
         margin-top: 7px;
       }
     }
-    .header__nav_item:hover .header__nav_sublist {
+    .hidden {
+      display: none;
+    }
+    .header__nav_item:hover .header__nav_sublist, .header__nav_item .header__nav_sublist:hover {
+      visibility: visible;
+      max-height: 1000px;
       display: flex;
     }
-
     // .header__nav_subitem 
 
     &__nav_subitem {
-
+      clear: both;
+      width: 100%;
+      position: relative;
     }
 
     // .header__nav_sublink
@@ -291,7 +287,7 @@
     }
     .slick-prev {
       background-image: url(../img/content-img/arrow-left.svg);
-      left: 74%;
+      left: 72%;
       @include xl {
         left: auto;
         right: 100px;

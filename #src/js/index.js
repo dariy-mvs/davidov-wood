@@ -36,6 +36,20 @@ $( document ).ready( () => {
     $( '.catalog-home__chapter_descr' ).each( function() {
       $( this ).addClass( 'chapterMobile' );
     } );
+
+    // и переходить по ссылке только после открытия меню
+    $( '.header__nav_item' ).on( 'click', ( evt ) => {
+      const target = evt.target.closest( '.header__nav_item' );
+      const subMenu = [ ...target.children ].find( ( el ) => el.classList.contains( 'header__nav_sublist' ) );
+      if ( subMenu ) {
+        if ( !target.classList.contains( 'active_menu' ) ) {
+          evt.preventDefault();
+          target.classList.add( 'active_menu' );
+        } else {
+          target.classList.remove( 'active_menu' );
+        }
+      }
+    } );
   }
 
   // слайдер блога на главной
@@ -61,34 +75,33 @@ $( document ).ready( () => {
 
   // пагинация для портфолио
 
-  function pagination(parentSelector, itemSelector, itemPage) {
-    const items = $( `${parentSelector} ${itemSelector}`);
+  function pagination( parentSelector, itemSelector, itemPage ) {
+    const items = $( `${parentSelector} ${itemSelector}` );
     const numItems = items.length;
     const perPage = itemPage;
 
     items.slice( perPage ).hide();
     $( '.pagination-container' ).pagination( {
-    items: numItems,
-    itemsOnPage: perPage,
-    prevText: '&laquo;',
-    nextText: '&raquo;',
-    onPageClick( pageNumber ) {
-      const showFrom = perPage * ( pageNumber - 1 );
-      const showTo = showFrom + perPage;
-      items.hide().slice( showFrom, showTo ).show();
-      $( 'html, body' ).animate( { scrollTop: 0 }, 100 );
-    }
-  } );
-  };
-  
-  pagination('.portfolio__list', '.portfolio__item', 6);
-  pagination('.blog-main__list', '.blog-home__item', 5);
-  pagination('.catalog__list', '.catalog__item', 5);
+      items: numItems,
+      itemsOnPage: perPage,
+      prevText: '&laquo;',
+      nextText: '&raquo;',
+      onPageClick( pageNumber ) {
+        const showFrom = perPage * ( pageNumber - 1 );
+        const showTo = showFrom + perPage;
+        items.hide().slice( showFrom, showTo ).show();
+        $( 'html, body' ).animate( { scrollTop: 0 }, 100 );
+      }
+    } );
+  }
 
+  pagination( '.portfolio__list', '.portfolio__item', 6 );
+  pagination( '.blog-main__list', '.blog-home__item', 5 );
+  pagination( '.catalog__list', '.catalog__item', 5 );
 
   // popup для портфолио
 
-  function popupImg(selector) {
+  function popupImg( selector ) {
     $( selector ).magnificPopup( {
       delegate: 'img',
       type: 'image',
@@ -102,26 +115,26 @@ $( document ).ready( () => {
         }
       }
     } );
-  };
+  }
 
-  popupImg('.portfolio__list');
+  popupImg( '.portfolio__list' );
 
-  // показ поля комментов 
+  // показ поля комментов
 
-  $('.comments__write').on('click', () => {
-    $('.comments__write_form').toggleClass('formHidden');
-  });
+  $( '.comments__write' ).on( 'click', () => {
+    $( '.comments__write_form' ).toggleClass( 'formHidden' );
+  } );
 
   // слайдер для страницы продукта
 
-  $('.product__big_slider').slick({
+  $( '.product__big_slider' ).slick( {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: true,
     fade: true,
     asNavFor: '.product__slider'
-  });
-  $('.product__slider').slick({
+  } );
+  $( '.product__slider' ).slick( {
     slidesToShow: 3,
     slidesToScroll: 1,
     vertical: true,
@@ -134,19 +147,19 @@ $( document ).ready( () => {
         settings: {
           vertical: false,
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 1
         }
-      }, 
+      },
       {
         breakpoint: 768,
         settings: {
           vertical: false,
           slidesToShow: 2,
-          slidesToScroll: 1,
+          slidesToScroll: 1
         }
       }
     ]
-  });
+  } );
 
   // слайдер похожих работ
 
@@ -172,55 +185,51 @@ $( document ).ready( () => {
     ]
   } );
 
-  // табы страницы продукта 
+  // табы страницы продукта
 
-  $('.product__tabs_item').on('click', (event) => {
-    let target = event.target;
-    if (target.classList.contains('active')) {
-      return;
+  $( '.product__tabs_item' ).on( 'click', ( event ) => {
+    const { target } = event;
+    if ( target.classList.contains( 'active' ) ) {
+
     } else {
-      let tab = target.closest('.product__tabs_item');
-      let content = document.querySelector('.product__tabs_content');
-      $('.active').removeClass('active');
-      tab.classList.add('active');
-      console.log(tab.dataset.tab);
-      if (tab.dataset.tab === 'description') {
-        console.log('a');
-        content.innerHTML = '<p>Компания «Давыдов и Ко» активно развивается на рынке мебели и изделий для интерьера из натурального дерева Санкт-Петербурга. За годы своей деятельности мы сформировали коллектив высококвалифицированных сотрудников и развили партнёрские отношения с надёжными поставщиками. Развитие бизнеса и охват новых рынков побуждает нас расширять штат дизайнеров и архитекторов, а также строить доверительные отношения с производителями натуральной древесины, фурнитуры и лакокрасочных материалов.</p>'
-      } else if (tab.dataset.tab === 'color') {
-        console.log('b');
-        content.innerHTML = '<p>Контент цветов</p>'
-      } else if (tab.dataset.tab === 'review') {
-        console.log('c');
-        content.innerHTML = '<p>Контент отзывов</p>'
-      } else if (tab.dataset.tab === 'video') {
-        console.log('d');
-        content.innerHTML = '<p>Контент video</p>'
-      } 
+      const tab = target.closest( '.product__tabs_item' );
+      const content = document.querySelector( '.product__tabs_content' );
+      $( '.active' ).removeClass( 'active' );
+      tab.classList.add( 'active' );
+      console.log( tab.dataset.tab );
+      if ( tab.dataset.tab === 'description' ) {
+        content.innerHTML = '<p>Компания «Давыдов и Ко» активно развивается на рынке мебели и изделий для интерьера из натурального дерева Санкт-Петербурга. За годы своей деятельности мы сформировали коллектив высококвалифицированных сотрудников и развили партнёрские отношения с надёжными поставщиками. Развитие бизнеса и охват новых рынков побуждает нас расширять штат дизайнеров и архитекторов, а также строить доверительные отношения с производителями натуральной древесины, фурнитуры и лакокрасочных материалов.</p>';
+      } else if ( tab.dataset.tab === 'color' ) {
+        content.innerHTML = '<p>Контент цветов</p>';
+      } else if ( tab.dataset.tab === 'review' ) {
+        content.innerHTML = '<p>Контент отзывов</p>';
+      } else if ( tab.dataset.tab === 'video' ) {
+        content.innerHTML = '<p>Контент video</p>';
+      }
     }
-  });
+  } );
 
   // отзывы popup для фото
 
-  popupImg('.review__img_box');
+  popupImg( '.review__img_box' );
 
-  // пагинация для отзывов 
+  // пагинация для отзывов
 
-  pagination('.reviews__list', '.reviews__item', 5);
+  pagination( '.reviews__list', '.reviews__item', 5 );
 
   // форма обратной связи
 
-  function addPopup(selector) {
-    $(selector).on('click', () => {
-      $('.callback').css("display", "flex");
-    });
+  function addPopup( selector ) {
+    $( selector ).on( 'click', () => {
+      $( '.callback' ).css( 'display', 'flex' );
+    } );
   }
-  addPopup('.header__nav_button');
+  addPopup( '.header__nav_button' );
 
-  $('.callback').on('click', (event) => {
-    let target = event.target;
-    if (target.classList.contains('callback__esc')|| !target.closest('.callback__box')) {
-      $('.callback').css("display", "none");
+  $( '.callback' ).on( 'click', ( event ) => {
+    const { target } = event;
+    if ( target.classList.contains( 'callback__esc' ) || !target.closest( '.callback__box' ) ) {
+      $( '.callback' ).css( 'display', 'none' );
     }
-  });
+  } );
 } );

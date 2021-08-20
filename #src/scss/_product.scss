@@ -395,7 +395,14 @@
 
   .form-question {
     grid-column: 1/3;
+    .mf-captcha {
+      @include thisFont("Montserrat", 400, normal, 18px, #fff, 15px);
+      input {
+        @include fieldNoBorder()
+      }
+    }
   }
+
 }
 
 .slick-slider * {
